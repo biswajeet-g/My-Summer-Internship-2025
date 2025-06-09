@@ -1,0 +1,28 @@
+** sch_path: /home/biswajeetg/work/xschem/buffer1khz.sch
+**.subckt buffer1khz vop vinp vom vinm
+*.iopin vop
+*.iopin vom
+*.iopin vinp
+*.iopin vinm
+R1 net1 net2 15.9k m=1
+C1 net2 GND 10n m=1
+E1 net1 GND vinp vinm 1000
+E2 vop vom net2 GND 1
+V1 vinp vinm 1
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+set appendfile
+wrtie buffer1khz.raw
+
+.ENDC
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

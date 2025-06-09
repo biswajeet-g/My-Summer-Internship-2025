@@ -1,0 +1,46 @@
+** sch_path: /home/biswajeetg/work/xschem/mictest1.sch
+**.subckt mictest1
+Vmic Vnmic GND 0 AC 1
+R1 Vnmic vn1 380 m=1
+C1 vn1 vn2 4.7u m=1
+R3 vn2 net1 4.7k m=1
+E1 vout GND vcm net1 1000
+C2 net1 vout 27p m=1
+R2 net1 vout 300k m=1
+V2 vcm GND 1.5
+C3 vout GND 1p m=1
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+op
+write mictest1.raw
+set appendwrite
+ac dec 100 0.1 10e6
+write mictest1.raw
+**
+meas ac gain_db MAX vdb(vout) FROM=0.1 TO=10e6
+let vm3db=gain_db-3.0
+print vm3db
+meas ac fzero when vdb(vout)=vm3db RISE=1
+meas ac fpole when vdb(vout)=vm3db FALL=1
+
+**phase management
+let phase_deg=cph(vout)*180/pi
+meas AC phase_zero FIND phase_deg AT =fzero
+meas AC phase_pole FIND phase_deg AT =fpole
+meas ac phase_margin FIND phase_deg when vdb(vout)=0
+
+
+
+
+.ENDC
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

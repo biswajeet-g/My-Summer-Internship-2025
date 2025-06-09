@@ -1,0 +1,72 @@
+** sch_path: /home/biswajeetg/work/xschem/highpass_omp2.sch
+**.subckt highpass_omp2
+x1 vout vcm GND virt buffer1khz
+R1 net1 virt 5k m=1
+C1 vin net1 4.7u m=1
+R2 virt vout 5k m=1
+V1 vin GND 0 AC 1
+V2 vcm GND 1.5
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+op
+write highpass_omp2.raw
+set appendwrite
+ac dec 100 0.1 10e6
+write highpass_omp2.raw
+**
+meas ac gain_db MAX vdb(vout) FROM=0.1 TO=10e6
+let vm3db=gain_db-3.0
+print vm3db
+meas ac fzero when vdb(vout)=vm3db RISE=1
+meas ac fpole when vdb(vout)=vm3db FALL=1
+
+**phase management
+let phase_deg=cph(vout)*180/pi
+meas AC phase_zero FIND phase_deg AT =fzero
+meas AC phase_pole FIND phase_deg AT =fpole
+meas ac phase_margin FIND phase_deg when vdb(vout)=0
+
+
+
+
+.ENDC
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  buffer1khz.sym # of pins=4
+** sym_path: /home/biswajeetg/work/xschem/buffer1khz.sym
+** sch_path: /home/biswajeetg/work/xschem/buffer1khz.sch
+.subckt buffer1khz vop vinp vom vinm
+*.iopin vop
+*.iopin vom
+*.iopin vinp
+*.iopin vinm
+R1 net1 net2 15.9k m=1
+C1 net2 GND 10n m=1
+E1 net1 GND vinp vinm 1000
+E2 vop vom net2 GND 1
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+set appendfile
+wrtie buffer1khz.raw
+
+.ENDC
+
+
+**** end user architecture code
+.ends
+
+.GLOBAL GND
+.end

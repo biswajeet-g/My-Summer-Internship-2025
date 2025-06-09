@@ -1,0 +1,55 @@
+** sch_path: /home/biswajeetg/work/xschem/highpass_opamp3.sch
+**.subckt highpass_opamp3
+x1 vout vcm virt net2 opamp_model2
+V1 vin net2 0 AC 1
+R1 net1 virt 5k m=1
+C1 vin net1 4.7u m=1
+R2 virt vout 5k m=1
+V2 vcm GND 1.5
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+op
+write highpass_omp3.raw
+set appendwrite
+ac dec 100 0.1 10e6
+write highpass_omp3.raw
+**
+meas ac gain_db MAX vdb(vout) FROM=0.1 TO=10e6
+let vm3db=gain_db-3.0
+print vm3db
+meas ac fzero when vdb(vout)=vm3db RISE=1
+meas ac fpole when vdb(vout)=vm3db FALL=1
+
+**phase management
+let phase_deg=cph(vout)*180/pi
+meas AC phase_zero FIND phase_deg AT =fzero
+meas AC phase_pole FIND phase_deg AT =fpole
+meas ac phase_margin FIND phase_deg when vdb(vout)=0
+
+
+
+
+.ENDC
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  opamp_model2.sym # of pins=4
+** sym_path: /home/biswajeetg/work/xschem/opamp_model2.sym
+** sch_path: /home/biswajeetg/work/xschem/opamp_model2.sch
+.subckt opamp_model2 vop vip vim vom
+*.iopin vip
+*.iopin vim
+*.iopin vop
+*.iopin vom
+E1 vop vom vip vim 1000
+.ends
+
+.GLOBAL GND
+.end

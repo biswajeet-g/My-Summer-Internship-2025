@@ -1,0 +1,58 @@
+** sch_path: /home/biswajeetg/work/xschem/mictest2_omp.sch
+**.subckt mictest2_omp
+R1 net3 net4 4.7k m=1
+C1 net2 net3 4.7u m=1
+V2 net5 GND 1.5
+R2 net4 net6 300k m=1
+C2 net4 net6 27p m=1
+C3 net6 GND 1p m=1
+R3 net1 net2 380 m=1
+Vmic net1 GND 0 AC 1
+x1 net6 net5 net4 GND opamp_model1
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+op
+write mictest2_omp.raw
+set appendwrite
+ac dec 100 0.1 10e6
+write mictest2_omp.raw
+**
+meas ac gain_db MAX vdb(vout) FROM=0.1 TO=10e6
+let vm3db=gain_db-3.0
+print vm3db
+meas ac fzero when vdb(vout)=vm3db RISE=1
+meas ac fpole when vdb(vout)=vm3db FALL=1
+
+**phase management
+let phase_deg=cph(vout)*180/pi
+meas AC phase_zero FIND phase_deg AT =fzero
+meas AC phase_pole FIND phase_deg AT =fpole
+meas ac phase_margin FIND phase_deg when vdb(vout)=0
+
+
+
+
+.ENDC
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  opamp_model1.sym # of pins=4
+** sym_path: /home/biswajeetg/work/xschem/opamp_model1.sym
+** sch_path: /home/biswajeetg/work/xschem/opamp_model1.sch
+.subckt opamp_model1 vop vip vim vom
+*.iopin vop
+*.iopin vom
+*.iopin vim
+*.iopin vip
+E1 vop vom vip vim 1000
+.ends
+
+.GLOBAL GND
+.end

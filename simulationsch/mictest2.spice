@@ -1,0 +1,22 @@
+** sch_path: /home/biswajeetg/work/xschem/mictest2.sch
+**.subckt mictest2
+E1 net6 net7 net5 net4 3
+R1 net3 net4 1k m=1
+C1 net2 net3 1p m=1
+V2 net5 GND 3
+R2 net4 net6 1k m=1
+C2 net4 net6 1p m=1
+C3 net6 GND 1p m=1
+R3 net1 net2 1k m=1
+V3 net1 GND 3
+**** begin user architecture code
+
+
+
+* ngspice commands
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
