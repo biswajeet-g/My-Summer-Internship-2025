@@ -8,4 +8,24 @@ The core focus was the Analog Front-End (AFE) design for a USB Microphone, along
 
 This repository serves as a consolidated and version-controlled record of my learning, simulations, and project implementation.
 
+## Introduction
+<ul>
+    <li>Name : BISWAJEET GANTHIA</li>
+    <li>SIC : 23BECF84</li>
+    <li>Branch : ELECTRONICS AND COMMUNICATION ENGINEERING</li>
+    <li>Mentor : DR. SAROJ ROUT</li>
+    
+</ul>
+
+## Documentation
+### Software Used
+<ul>
+    <li>Xschem</li>
+    <li>ngspice</li>
+    <li>Siliwiz</li>
+
+  </ul>
+
+
+
 
