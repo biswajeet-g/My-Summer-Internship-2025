@@ -1,0 +1,32 @@
+** sch_path: /home/biswajeetg/work/xschem/nmosvds1.sch
+**.subckt nmosvds1
+Vgs vg GND 1
+Vds vd GND 0
+XM1 vd vg GND GND sky130_fd_pr__nfet_01v8_lvt L=1 W=4 nf=1 ad=1.16 as=1.16 pd=8.58 ps=8.58 nrd=0.0725 nrs=0.0725 sa=0 sb=0 sd=0
++ mult=1 m=1
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+OP
+write nmosvds1.raw
+set appendwrite
+DC Vds 0 1.8 0.1 Vgs 0.4 1.0 0.1
+write nmosvds1.raw
+**
+plot vds#branch
+plot abs(vds#branch)
+.ENDC
+
+
+
+** opencircuitdesign pdks install
+.lib /home/biswajeetg/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
