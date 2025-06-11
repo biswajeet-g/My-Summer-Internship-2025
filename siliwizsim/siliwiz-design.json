@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "app": "siliwiz",
+  "timestamp": 1749546295,
+  "rects": [
+    { "x": 5.89, "y": 8, "height": 376, "width": 385, "layer": "p substrate" },
+    { "x": 34.89, "y": 25, "height": 128, "width": 323, "layer": "n well" }
+  ],
+  "graph": {
+    "dcSweep": false,
+    "minInVoltage": 0,
+    "maxInVoltage": 5,
+    "pulseDelay": 0,
+    "riseTime": 50,
+    "signalNames": "in out",
+    "tranTime": 60000000
+  }
+}

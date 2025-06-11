@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "app": "siliwiz",
+  "timestamp": 1749658040,
+  "rects": [
+    { "x": 6.89, "y": 28, "height": 341, "width": 379, "layer": "p substrate" },
+    { "x": 21.89, "y": 42, "height": 144, "width": 341, "layer": "n well" },
+    { "x": 106.89, "y": 99, "height": 39, "width": 167, "layer": "p diffusion" },
+    { "x": 295.89, "y": 314, "height": 40, "width": 65, "layer": "p tap" },
+    { "x": 252.89, "y": 60, "height": 36, "width": 52, "layer": "n tap" },
+    { "x": 101.89, "y": 240, "height": 40, "width": 186, "layer": "n tap" },
+    { "x": 158.89, "y": 106, "height": 215, "width": 54, "layer": "polysilicon" },
+    { "x": 77.89, "y": 192, "height": 39, "width": 95, "layer": "polysilicon" },
+    { "x": 260.89, "y": 63, "height": 27, "width": 33, "layer": "metal1 via" },
+    { "x": 108.89, "y": 103, "height": 33, "width": 42, "layer": "metal1 via" },
+    { "x": 301.89, "y": 314, "height": 34, "width": 54, "layer": "metal1 via" },
+    { "x": 82.89, "y": 197, "height": 27, "width": 36, "layer": "metal1 via" },
+    { "x": 220.89, "y": 238, "height": 17, "width": 17, "layer": "metal1 via" },
+    { "x": 242.89, "y": 259, "height": 3, "width": 7, "layer": "metal1 via" },
+    { "x": 220.89, "y": 240, "height": 33, "width": 41, "layer": "metal1 via" },
+    { "x": 111.89, "y": 240, "height": 36, "width": 42, "layer": "metal1 via" },
+    { "x": 81.89, "y": 198, "height": 26, "width": 41, "layer": "metal1 via" },
+    { "x": 218.89, "y": 103, "height": 25, "width": 47, "layer": "metal1 via" },
+    { "x": 37.89, "y": 52, "height": 40, "width": 314, "layer": "metal1" },
+    { "x": 27.89, "y": 41, "height": 61, "width": 69, "layer": "metal1", "label": "Vdd" },
+    { "x": 104.89, "y": 53, "height": 83, "width": 38, "layer": "metal1" },
+    { "x": 50.89, "y": 326, "height": 26, "width": 308, "layer": "metal1" },
+    { "x": 27.89, "y": 317, "height": 40, "width": 64, "layer": "metal1", "label": "Vss" },
+    { "x": 235.89, "y": 188, "height": 40, "width": 120, "layer": "metal1", "label": "Out" },
+    { "x": 25.89, "y": 197, "height": 35, "width": 100, "layer": "metal1", "label": "In" },
+    { "x": 217.89, "y": 107, "height": 175, "width": 48, "layer": "metal1" },
+    { "x": 110.89, "y": 246, "height": 88, "width": 40, "layer": "metal1" }
+  ],
+  "graph": {
+    "dcSweep": false,
+    "minInVoltage": 0,
+    "maxInVoltage": 5,
+    "pulseDelay": 0,
+    "riseTime": 50,
+    "signalNames": "in out",
+    "tranTime": 60000000
+  }
+}

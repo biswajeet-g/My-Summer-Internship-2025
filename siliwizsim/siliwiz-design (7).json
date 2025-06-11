@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "app": "siliwiz",
+  "timestamp": 1749659399,
+  "rects": [
+    { "x": 111.89, "y": 32, "height": 11, "width": 159, "layer": "polyres" },
+    { "x": 258.89, "y": 34, "height": 19, "width": 12, "layer": "polyres" },
+    { "x": 131.89, "y": 51, "height": 5, "width": 136, "layer": "polyres" },
+    { "x": 134.89, "y": 50, "height": 15, "width": 9, "layer": "polyres" },
+    { "x": 137.89, "y": 65, "height": 4, "width": 153, "layer": "polyres" },
+    { "x": 42.89, "y": 36, "height": 47, "width": 60, "layer": "metal1 via" },
+    { "x": 296.89, "y": 40, "height": 52, "width": 62, "layer": "metal1 via" },
+    { "x": 21.89, "y": 167, "height": 213, "width": 349, "layer": "metal1" },
+    { "x": 42.89, "y": 46, "height": 124, "width": 63, "layer": "metal1" },
+    { "x": 26.89, "y": 22, "height": 70, "width": 97, "layer": "metal1", "label": "Out" },
+    { "x": 281.89, "y": 22, "height": 79, "width": 90, "layer": "metal1", "label": "Vss" },
+    { "x": 40.89, "y": 190, "height": 166, "width": 301, "layer": "mim capacitor" },
+    { "x": 263.89, "y": 301, "height": 40, "width": 58, "layer": "metal2 via" },
+    { "x": 249.89, "y": 284, "height": 58, "width": 79, "layer": "metal2", "label": "In" }
+  ],
+  "graph": {
+    "dcSweep": false,
+    "minInVoltage": 0,
+    "maxInVoltage": 5,
+    "pulseDelay": 0,
+    "riseTime": 50,
+    "signalNames": "in out",
+    "tranTime": 60000000
+  }
+}
