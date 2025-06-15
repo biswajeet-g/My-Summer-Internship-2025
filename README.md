@@ -44,7 +44,7 @@ This repository serves as a consolidated and version-controlled record of my lea
 | Folder         | Description                                         |
 |----------------|-----------------------------------------------------|
 | `simulations/` | NGSpice and Xschem files for each circuit block     |
-| `siliwiz/'    | Layout files of Siliwiz tool                  |
+| `siliwizsim/`  | Layout files of Siliwiz tool                  |
 | `work/`    | NGSpice codes and Xschem files  |
 
 ### Sample Simulation Result
