@@ -13,19 +13,45 @@ This repository serves as a consolidated and version-controlled record of my lea
     <li>Name : BISWAJEET GANTHIA</li>
     <li>SIC : 23BECF84</li>
     <li>Branch : ELECTRONICS AND COMMUNICATION ENGINEERING</li>
+    <li>Duration : June 2nd 2025 - June 20th 2025</li>
     <li>Mentor : DR. SAROJ ROUT</li>
     
 </ul>
 
-## Documentation
+
 ### Software Used
 <ul>
     <li>Xschem</li>
     <li>ngspice</li>
     <li>Siliwiz</li>
+    <li>Git & Github</li>
 
   </ul>
 
+### Topics Covered
+<ul>
+    <li>RC Circuits</li>
+    <li>Passive IC Devices</li>
+    <li>Semiconductor Devices and IC Processing</li>
+    <li>MOS Devices</li>
+    <li>Small Signal Analysis</li>
+    <li>Current Mirror</li>
+    <li>Differential Amplifer</li>
+</ul>
 
+### Repository Structure
+
+| Folder         | Description                                         |
+|----------------|-----------------------------------------------------|
+| `simulations/` | NGSpice and Xschem files for each circuit block     |
+| `siliwiz/'    | Layout files of Siliwiz tool                  |
+| `work/`    | NGSpice codes and Xschem files  |
+
+### Sample Simulation Result
+<ul>
+![currentmirror](https://github.com/user-attachments/assets/6cafbc2a-93fe-49ef-abef-278129c0cca4)
+
+
+</ul>
 
 
