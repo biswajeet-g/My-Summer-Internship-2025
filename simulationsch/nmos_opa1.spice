@@ -1,0 +1,118 @@
+** sch_path: /home/biswajeetg/work/xschem/nmos_opa1.sch
+**.subckt nmos_opa1
+E1 vim vcm V2 GND -0.5
+E2 vip vcm V2 GND 0.5
+V2 V2 GND 0 AC 1
+vcm vcm GND 0.9
+vdd AVDD GND 1.8
+I0 AVDD net1 5u
+C1 vout GND 10f m=1
+x1 AVDD vout vim vip net1 GND nmosopampmrr
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /home/biswajeetg/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+
+
+
+.CONTROL
+
+    save all
+
+    save @m.x1.xm1.msky130_fd_pr__nfet_01v8[id]
+    save @m.x1.xm1.msky130_fd_pr__nfet_01v8[gm]
+
+    save @m.x1.xmim.msky130_fd_pr__nfet_01v8_lvt[id]
+    save @m.x1.xmim.msky130_fd_pr__nfet_01v8_lvt[gm]
+
+    save @m.x1.xmip.msky130_fd_pr__nfet_01v8_lvt[id]
+    save @m.x1.xmip.msky130_fd_pr__nfet_01v8_lvt[gm]
+
+    save @m.x1.xmpcmm.msky130_fd_pr__pfet_01v8_lvt[id]
+    save @m.x1.xmpcmm.msky130_fd_pr__pfet_01v8_lvt[gm]
+
+    save @m.x1.xmpcmp.msky130_fd_pr__pfet_01v8_lvt[id]
+    save @m.x1.xmpcmp.msky130_fd_pr__pfet_01v8_lvt[gm]
+
+    save @m.x1.xmtail.msky130_fd_pr__nfet_01v8[id]
+    save @m.x1.xmtail.msky130_fd_pr__nfet_01v8[gm]
+
+    OP
+    write nmos_opa1.raw
+    let im1=@m.x1.xm1.msky130_fd_pr__nfet_01v8[id]
+    let imim=@m.x1.xmim.msky130_fd_pr__nfet_01v8_lvt[id]
+    let imip=@m.x1.xmip.msky130_fd_pr__nfet_01v8_lvt[id]
+    let impcmm=@m.x1.xmpcmm.msky130_fd_pr__pfet_01v8_lvt[id]
+    let impcmp=@m.x1.xmpcmp.msky130_fd_pr__pfet_01v8_lvt[id]
+    let imtail=@m.x1.xmtail.msky130_fd_pr__nfet_01v8[id]
+
+    let gmm1=@m.x1.xm1.msky130_fd_pr__nfet_01v8[gm]
+    let gmmim=@m.x1.xmim.msky130_fd_pr__nfet_01v8_lvt[gm]
+    let gmmip=@m.x1.xmip.msky130_fd_pr__nfet_01v8_lvt[gm]
+    let gmmpcmm=@m.x1.xmpcmm.msky130_fd_pr__pfet_01v8_lvt[gm]
+    let gmmpcmp=@m.x1.xmpcmp.msky130_fd_pr__pfet_01v8_lvt[gm]
+    let gmmtail=@m.x1.xmtail.msky130_fd_pr__nfet_01v8[gm]
+
+ 	let gmm1im1=gmm1/im1
+	let gmmtailimtail=gmmtail/imtail
+	let gmmimimim=gmmim/imim
+	let gmmipimip=gmmip/imip
+	let gmmpcmmimpcmm=gmmpcmm/impcmm
+	let gmmpcmpimpcmp=gmmpcmp/impcmp
+
+	print gmm1im1
+	print gmmtailimtail
+	print gmmimimim
+	print gmmipimip
+	print gmmpcmmimpcmm
+	print gmmpcmpimpcmp
+
+.ENDC
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  nmosopampmrr.sym # of pins=6
+** sym_path: /home/biswajeetg/work/xschem/nmosopampmrr.sym
+** sch_path: /home/biswajeetg/work/xschem/nmosopampmrr.sch
+.subckt nmosopampmrr AVDD vout vim vip ib5u AVSS
+*.iopin ib5u
+*.iopin vip
+*.iopin vim
+*.iopin AVDD
+*.iopin AVSS
+*.iopin vout
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+write nmosopampmrr.raw
+set appendfile
+write nmosopampmrr.raw
+
+.ENDC
+
+
+**** end user architecture code
+XMtail net1 ib5u AVSS AVSS sky130_fd_pr__nfet_01v8 L=1 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=2 m=2
+XM1 ib5u ib5u AVSS AVSS sky130_fd_pr__nfet_01v8 L=1 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0 sd=0
++ mult=1 m=1
+XMip vom vip net1 net1 sky130_fd_pr__nfet_01v8_lvt L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=4 m=4
+XMim vout vim net1 net1 sky130_fd_pr__nfet_01v8_lvt L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=4 m=4
+XMpcmm vout vom AVDD AVDD sky130_fd_pr__pfet_01v8_lvt L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=2 m=2
+XMpcmp vom vom AVDD AVDD sky130_fd_pr__pfet_01v8_lvt L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=2 m=2
+.ends
+
+.GLOBAL GND
+.end

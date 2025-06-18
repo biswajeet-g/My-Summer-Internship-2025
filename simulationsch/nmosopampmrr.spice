@@ -1,0 +1,37 @@
+** sch_path: /home/biswajeetg/work/xschem/nmosopampmrr.sch
+**.subckt nmosopampmrr AVDD vout vim vip ib5u AVSS
+*.iopin ib5u
+*.iopin vip
+*.iopin vim
+*.iopin AVDD
+*.iopin AVSS
+*.iopin vout
+XMtail net1 ib5u AVSS AVSS sky130_fd_pr__nfet_01v8 L=1 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=2 m=2
+XM1 AVSS ib5u ib5u AVSS sky130_fd_pr__nfet_01v8 L=1 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0 sd=0
++ mult=1 m=1
+XMip vom vip net1 net1 sky130_fd_pr__nfet_01v8_lvt L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=4 m=4
+XMpcmp AVDD vom vom AVDD sky130_fd_pr__pfet_01v8 L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0 sd=0
++ mult=2 m=2
+XMpcmm vout vom AVDD AVDD sky130_fd_pr__pfet_01v8 L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=2 m=2
+XMim net1 vim vout net1 sky130_fd_pr__nfet_01v8_lvt L=2 W=5 nf=1 ad=1.45 as=1.45 pd=10.58 ps=10.58 nrd=0.058 nrs=0.058 sa=0 sb=0
++ sd=0 mult=4 m=4
+**** begin user architecture code
+
+
+
+.CONTROL
+
+save all
+write nmosopampmrr.raw
+set appendfile
+write nmosopampmrr.raw
+
+.ENDC
+
+
+**** end user architecture code
+**.ends
+.end
